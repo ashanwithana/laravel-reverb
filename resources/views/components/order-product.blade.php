@@ -30,7 +30,7 @@
                 this.currentStatus = '{{$order->status}}';
                 this.updateProgressBar();
 
-                Echo.channel('orders.1')
+                Echo.channel('orders.{{$order->id}}')
                     .listen('OrderShipmentStatusUpdate', (e) => {
                         this.currentStatus = e.status;
                         this.updateProgressBar();
